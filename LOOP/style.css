@@ -1,0 +1,46 @@
+#Score{
+    text-align:center;
+}
+#game{
+    width: 600px;
+    height: 300px;
+    border: 2px solid black;
+    margin: auto;
+    background:url("https://images.jpeg");
+    background-size: cover;
+}
+#dino{
+    height: 74px;
+    width: 75px;
+    position: relative;
+    top: 225px;
+    background-image:url("https:dino.jpg");
+    background-size: cover;
+    /* animation: jump 0.5s; */
+}
+#cactus{
+    height:50px;
+    width: 50px;
+    position: relative;
+    top: 175px;
+    left: 550px;
+    background-image:url("https://images.jpeg");
+    background-size: cover;
+    animation: rock 1.33s infinite;
+}
+@keyframes cactus{
+    0%{left: 550px;}
+    100%{left: -50px;}
+}
+
+
+.jump-animation{
+    animation: jump 0.5s;
+}
+
+@keyframes jump{
+    0%{top: 225px;}
+    0%{top: 75px;}
+    0%{top: 75px;}
+    100%{top: -225px;}
+}

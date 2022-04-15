@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>dino</title>
+    <h1 id="heading">DINO GAME</h1>
+<style>
+  #heading{
+    font-size:55px;
+  }
+  .game{
+    height:200px; 
+    width:600px;
+    border:2px solid black;
+  }
+  #dino{
+    width:50px;
+    height:50px;
+    background-image: url("dino.png");
+    background-size:50px 50px;
+    position: relative;  
+    top:150px;
+  }
+  .jump{
+    animation: jump 1s  linear;
+  }
+
+  @keyframes jump{
+  0%{ top:150px;}
+  30%{ top:90x;}
+  50%{ top:75px;}         
+  80%{top:90px;}
+  100%{top:150px;}
+  }  
+  #cactus{
+    width:50px;
+    height:50px;
+    position: relative;
+    top:110px;
+    left:580px;
+    background-image:url("cactus.png");
+    background-size: 50px 50px;
+    animation: block 3s infinite linear;
+  }
+  @keyframes block {
+    0%{left:580px;animation-duration: 0s;}
+    100%{left:-20px;animation-duration: 3s;}
+  }
+    #score{
+      font-size: 50px;
+    }
+</style>
+</head>
+  <body>
+    <div class="game">
+      <div id="dino"></div>
+      <div id="cactus"></div>
+    </div>
+    <h1 id="score">0</h1>
+<script>
+  var  dino=document.getElementById("dino");
+  var cactus=document.getElementById("cactus")
+  var score=document.getElementById("score")
+  function jump(){
+    if (dino.classList!="jump"){
+    dino.classList.add("jump");
+    setTimeout(function(){
+      dino.classList.remove("jump");}
+      ,800);
+    }
+  }
+  //cactus
+  setInterval(function(){
+  score.innerText++
+  let dinotop=parseInt(window.getComputedStyle(dino).getPropertyValue("top"))//150
+  let cactusLeft=parseInt(window.getComputedStyle(cactus).getPropertyValue("left"))//50
+  if (cactusLeft<50 && cactusLeft>0 && dinotop>=140){
+    alert("You got a score of: "+score.innerText+" play again!!!")
+  }
+  },10);
+  document.addEventListener("keypress",function(){
+    jump();
+  });
+</script>   
+</body>
+</html>

@@ -1,0 +1,21 @@
+.all{
+    display: flex;
+    flex-direction: column;
+    align-items:center;
+    background-color: rgb(206, 206, 253);
+    
+}
+.a1{
+    background-color: rgb(226, 45, 45);
+
+}
+
+.a2{
+    background-color: rgba(41, 216, 22, 0.932);
+
+}
+
+.a3{
+    background-color: rgb(226, 45, 211);
+
+}
